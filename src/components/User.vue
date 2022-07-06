@@ -21,7 +21,7 @@
         :class="{ active: index == currentIndex }"
           v-for="(user, index) in users.data"
           :key="user.id"
-          @click="setActiveTutorial(user, index)"
+          @click="setActiveUser(user, index)"
         >
           <div class="card">
             <div class="card-body">
@@ -41,17 +41,17 @@
 <script>
 import UsersDataService from "../services/UsersDataService";
 export default {
-  name: "tutorials-list",
+  name: "users-list",
   data() {
     return {
       users: [],
-      currentTutorial: null,
+      currentUser: null,
       currentIndex: -1,
       title: ""
     };
   },
   methods: {
-    retrieveTutorials() {
+    retrieveUsers() {
       UsersDataService.getAll()
         .then(response => {
           this.users = response.data;
@@ -62,12 +62,12 @@ export default {
         });
     },
     refreshList() {
-      this.retrieveTutorials();
-      this.currentTutorial = null;
+      this.retrieveUsers();
+      this.currentUser = null;
       this.currentIndex = -1;
     },
-    setActiveTutorial(user, index) {
-      this.currentTutorial = user;
+    setActiveUser(user, index) {
+      this.currentUser = user;
       this.currentIndex = user ? index : -1;
     },
     
@@ -75,7 +75,7 @@ export default {
       UsersDataService.findByTitle(this.title)
         .then(response => {
           this.users = response.data;
-          this.setActiveTutorial(null);
+          this.setActiveUser(null);
           console.log(response.data);
         })
         .catch(e => {
@@ -84,7 +84,7 @@ export default {
     }
   },
   mounted(){ 
-    this.retrieveTutorials();
+    this.retrieveUsers();
   }
 };
 </script>
