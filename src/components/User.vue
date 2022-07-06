@@ -28,7 +28,7 @@
               <img class="card-img-top" style="width: 12rem; height: 12rem;" :src="user.picture"  alt="Card image cap"/>
               <h5 class="card-title">{{ user.title }}</h5>
               <p class="card-text">{{ user.firstName }} {{ user.lastName }}</p>
-              <router-link :to="'/users/profile/' + user.id" class="badge badge-warning">Perfil</router-link>
+              <router-link :to="'/users/profile/' + user.id" class="badge badge-warning">Perfíl <font-awesome-icon icon="fa-solid fa-angle-right" /></router-link>
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@
       <router-link to="/" class="navbar-brand">MailUp-Front</router-link>
       <div class="navbar-nav mr-auto">
         <li class="nav-item">
-          <router-link to="/users" class="nav-link">Users</router-link>
+          <router-link to="/users" class="nav-link">Users <font-awesome-icon icon="fa-solid fa-user-secret" /></router-link>
         </li>
        
       </div>
