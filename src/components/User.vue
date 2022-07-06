@@ -1,18 +1,6 @@
 <template>
   <div class="list row">
-    <div class="col-md-8">
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Buscar por nombre"
-          v-model="title"/>
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button"
-            @click="searchTitle"
-          >
-            Buscar
-          </button>
-        </div>
-      </div>
-    </div>
+    
     <div class="container">
       <h4>Usuarios</h4>
 
